@@ -34,19 +34,19 @@
     <section class="container mx-5 my-10 flex flex-col justify-center items-center">
         <h1 class="game-title font-primaryFont font-bold text-5xl pb-5">Tic Tac Toe</h1>
         <p class="m-2 font-secondaryFont font-normal text-xl">Give your friend a hard time!</p>
-        <div class="game-container">
-            <div data-cell-index="0" class="cell"></div>
-            <div data-cell-index="1" class="cell"></div>
-            <div data-cell-index="2" class="cell"></div>
-            <div data-cell-index="3" class="cell"></div>
-            <div data-cell-index="4" class="cell"></div>
-            <div data-cell-index="5" class="cell"></div>
-            <div data-cell-index="6" class="cell"></div>
-            <div data-cell-index="7" class="cell"></div>
-            <div data-cell-index="8" class="cell"></div>
+        <div class="game-container mx-auto my-5 w-80 h-[50vh] grid grid-cols-3">
+            <div data-cell-index="0" class="cell border-b-2 border-r-2 font-primaryFont text-5xl flex justify-center items-center hover:bg-mycolor"></div>
+            <div data-cell-index="1" class="cell border-b-2 border-r-2  font-primaryFont text-5xl flex justify-center items-center hover:bg-mycolor"></div>
+            <div data-cell-index="2" class="cell border-b-2  font-primaryFont text-5xl flex justify-center items-center hover:bg-mycolor"></div>
+            <div data-cell-index="3" class="cell border-b-2 border-r-2  font-primaryFont text-5xl flex justify-center items-center hover:bg-mycolor"></div>
+            <div data-cell-index="4" class="cell border-b-2 border-r-2  font-primaryFont text-5xl flex justify-center items-center hover:bg-mycolor"></div>
+            <div data-cell-index="5" class="cell border-b-2  font-primaryFont text-5xl flex justify-center items-center hover:bg-mycolor"></div>
+            <div data-cell-index="6" class="cell border-r-2  font-primaryFont text-5xl flex justify-center items-center hover:bg-mycolor"></div>
+            <div data-cell-index="7" class="cell border-r-2  font-primaryFont text-5xl flex justify-center items-center hover:bg-mycolor"></div>
+            <div data-cell-index="8" class="cell font-primaryFont text-5xl flex justify-center items-center hover:bg-mycolor"></div>
         </div>
-        <h2 class="game-status "></h2>
-        <button class="btn bg-mycolor font-secondaryFont font-bold text-xl">Restart Game</button>
+        <h2 class="game-status m-2 font-primaryFont font-normal text-2xl text-red-500"></h2>
+        <button id="button" class="btn bg-mycolor font-secondaryFont font-bold text-xl">Restart Game</button>
     </section>
 
     <script src="script.js"></script>
