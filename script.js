@@ -33,7 +33,6 @@ function checkWin() {
         gameActive = false;
         return;
     }
-
     if (roundWon) {
         winningMessage();
         gameActive = false;
@@ -45,23 +44,26 @@ function drawMessage() {
     let drawText = document.querySelector('.game-status');
     drawText.innerText = `Nobody has won -_-`;
 }
-
 function winningMessage() {
     let text = document.querySelector('.game-status');
     turn = changeTurn();
     text.innerText = `Player '${turn}' has won`;
 }
-
-
+function restartMessage() {
+    let text = document.querySelector('.game-status');
+    text.innerText = '';
+}
 // game logic 
 gridCell.forEach((items) => {
     items.addEventListener('click', () => {
-        const cellIndex = parseInt(items.getAttribute('data-cell-index'));
-        if (gameState[cellIndex] === '') {
-            items.innerText = turn;
-            gameState[cellIndex] = turn;
-            turn = changeTurn();
-            checkWin();
+        if (gameActive) {
+            const cellIndex = parseInt(items.getAttribute('data-cell-index'));
+            if (gameState[cellIndex] === '') {
+                items.innerText = turn;
+                gameState[cellIndex] = turn;
+                turn = changeTurn();
+                checkWin();
+            }
         }
     });
 });
@@ -76,13 +78,12 @@ const winningConditions = [
     [0, 4, 8],
     [2, 4, 6]
 ];
+// restart button login 
 document.getElementById('button').addEventListener('click', restartGame)
-
 function restartGame() {
     gameActive = true;
     gameState = ["", "", "", "", "", "", "", "", ""];
     document.querySelectorAll('.cell')
                .forEach(cell => cell.innerHTML = "");
+    restartMessage();
 };
-  
-
